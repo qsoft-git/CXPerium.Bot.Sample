@@ -106,11 +106,11 @@ namespace CXPerium.Bot.Sample.Channels
         /// <param name="conversationState">Class that contains information about the conversation. For example, conversation language, conversation session information, etc.</param>
         public override void OnFileReceived(
             Contact contact,
-            Activity activiy,
+            Activity activity,
             ConversationState conversationState
         )
         {
-            base.OnFileReceived(contact, activiy, conversationState);
+            base.OnFileReceived(contact, activity, conversationState);
         }
 
         /// <summary>
@@ -121,11 +121,11 @@ namespace CXPerium.Bot.Sample.Channels
         /// <param name="conversationState">Class that contains information about the conversation. For example, conversation language, conversation session information, etc.</param>
         public override void OnOrderReceived(
             Contact contact,
-            Activity activiy,
+            Activity activity,
             ConversationState conversationState
         )
         {
-            base.OnOrderReceived(contact, activiy, conversationState);
+            base.OnOrderReceived(contact, activity, conversationState);
         }
     }
 }
