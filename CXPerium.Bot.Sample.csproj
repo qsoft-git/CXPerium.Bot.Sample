@@ -6,8 +6,6 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <UserSecretsId>1dea6892-0c17-4033-a606-23e3c8269004</UserSecretsId>
-    <ApplicationInsightsResourceId>/subscriptions/8edce655-763e-4198-b423-a1f497e38128/resourcegroups/JojoResource/providers/Microsoft.Insights/components/JojoLogs</ApplicationInsightsResourceId>
 	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
 
