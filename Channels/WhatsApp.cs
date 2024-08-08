@@ -34,7 +34,7 @@ namespace CXPerium.Bot.Sample.Channels
         /// </summary>
         /// <param name="contact">Data of the user who sent the message in the Contacts list in CXPerium</param>
         /// <param name="activity">It contains information about the message, such as a form, file or text message.</param>
-        public override void OnWelcomeReceived(Models.Contact contact, Activity activity)
+        public override void OnWelcomeReceived(Contact contact, Activity activity)
         {
             base.OnWelcomeReceived(contact, activity);
         }
@@ -65,7 +65,7 @@ namespace CXPerium.Bot.Sample.Channels
         /// <param name="activity">It contains information about the message, such as a form, file or text message.</param>
         /// <param name="conversationState">Class that contains information about the conversation</param>
         /// <param name="fullFilment">Response returned from DialogFlow</param>
-        public virtual void OnDialogFlowMessage(Models.Contact contact, Activity activity, ConversationState conversationState, string fullFilment)
+        public new virtual void OnDialogFlowMessage(Contact contact, Activity activity, ConversationState conversationState, string fullFilment)
         {
             base.OnDialogFlowMessage(contact, activity, conversationState, fullFilment);
         }
@@ -78,7 +78,7 @@ namespace CXPerium.Bot.Sample.Channels
         /// <param name="activity">It contains information about the message, such as a form, file or text message.</param>
         /// <param name="conversationState">Class that contains information about the conversation</param>
         /// <param name="fullFilment">Response returned from DialogFlow</param>
-        public virtual void OnChatGPTMessage(Models.Contact contact, Activity activity, ConversationState conversationState, string response, List<AnnotationFile> annotations)
+        public new virtual void OnChatGPTMessage(Contact contact, Activity activity, ConversationState conversationState, string response, List<AnnotationFile> annotations)
         {
             base.OnChatGPTMessage(contact, activity, conversationState, response, annotations);
         }
