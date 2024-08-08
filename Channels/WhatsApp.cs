@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CXPerium.Controller;
+using CXPerium.Core.NLP;
+using CXPerium.Models;
+using CXPerium.WhatsApp;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading.Tasks;
+using Contact = CXPerium.Models.Contact;
 
-namespace CXPerium.Bot.Template.Channels
+namespace CXPerium.Bot.Sample.Channels
 {
     [Route("api/whatsapp")]
     public class WhatsappController : WpBaseController
@@ -44,7 +48,7 @@ namespace CXPerium.Bot.Template.Channels
         /// <param name="profileName">Whatsapp profile name of message sender</param>
         /// <param name="attributes">Custom fields defined on the user</param>
         /// <returns>Translates contact information in CXPerium</returns>
-        public override CXPerium.Models.Contact GetContactByPhone(
+        public override Contact GetContactByPhone(
             string phone,
             string profileName,
             Dictionary<string, string> attributes
@@ -76,7 +80,7 @@ namespace CXPerium.Bot.Template.Channels
         /// <param name="fullFilment">Response returned from DialogFlow</param>
         public virtual void OnChatGPTMessage(Models.Contact contact, Activity activity, ConversationState conversationState, string response, List<AnnotationFile> annotations)
         {
-            base.OnChatGPTMessage(contact, activity, conversationState, response,annotations);
+            base.OnChatGPTMessage(contact, activity, conversationState, response, annotations);
         }
 
         /// <summary>
@@ -86,7 +90,7 @@ namespace CXPerium.Bot.Template.Channels
         /// <param name="activity">It contains information about the message, such as a form, file or text message.</param>
         /// <param name="conversationState">Class that contains information about the conversation</param>
         public override void OnUnderstandMessage(
-            CXPerium.Models.Contact contact,
+            Contact contact,
             Activity activity,
             ConversationState conversationState
         )
@@ -101,7 +105,7 @@ namespace CXPerium.Bot.Template.Channels
         /// <param name="activiy">It contains information about the message, such as a form, file or text message.</param>
         /// <param name="conversationState">Class that contains information about the conversation. For example, conversation language, conversation session information, etc.</param>
         public override void OnFileReceived(
-            CXPerium.Models.Contact contact,
+            Contact contact,
             Activity activiy,
             ConversationState conversationState
         )
@@ -116,7 +120,7 @@ namespace CXPerium.Bot.Template.Channels
         /// <param name="activiy">It contains information about the message, such as a form, file or text message.</param>
         /// <param name="conversationState">Class that contains information about the conversation. For example, conversation language, conversation session information, etc.</param>
         public override void OnOrderReceived(
-            CXPerium.Models.Contact contact,
+            Contact contact,
             Activity activiy,
             ConversationState conversationState
         )

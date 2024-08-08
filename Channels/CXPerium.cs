@@ -2,11 +2,11 @@
 using CXPerium.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CXPerium.Bot.Template.Channels
+namespace CXPerium.Bot.Sample.Channels
 {
     [Route("api/cxlive/webhook")]
     [Route("api/cxperium/webhook")]
-    public class CXPerium: CXPeriumHook
+    public class CXPerium : CXPeriumHook
     {
         protected override void OnSurveyQuestionAnswered(Contact contact, ConversationState conversation, SurveyCx survey, SurveyQuestionReplyCx answer)
         {
