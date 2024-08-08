@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <UserSecretsId>1dea6892-0c17-4033-a606-23e3c8269004</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/8edce655-763e-4198-b423-a1f497e38128/resourcegroups/JojoResource/providers/Microsoft.Insights/components/JojoLogs</ApplicationInsightsResourceId>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Files\**" />
+    <Compile Remove="Middleware\**" />
+    <Compile Remove="wwwroot\images\**" />
+    <Content Remove="Files\**" />
+    <Content Remove="Middleware\**" />
+    <Content Remove="wwwroot\images\**" />
+    <EmbeddedResource Remove="Files\**" />
+    <EmbeddedResource Remove="Middleware\**" />
+    <EmbeddedResource Remove="wwwroot\images\**" />
+    <None Remove="Files\**" />
+    <None Remove="Middleware\**" />
+    <None Remove="wwwroot\images\**" />
+    <None Remove="Properties\" />
+    <None Remove="Dialogs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="appsettings-dev.json" />
+    <Content Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="appsettings-dev.json" />
+    <EmbeddedResource Include="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
+    <PackageReference Include="Quartz" Version="3.7.0" />
+    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.7.0" />
+  </ItemGroup>
+  <Import Project="PostDeployScripts\IncludeSources.targets" Condition="Exists('PostDeployScripts\IncludeSources.targets')" />
+  <Import Project="..\PostDeployScripts\IncludeSources.targets" Condition="Exists('..\PostDeployScripts\IncludeSources.targets')" />
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>
