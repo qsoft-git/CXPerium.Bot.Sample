@@ -13,7 +13,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "CXPerium.Bot.Template": {
+    "CXPerium.Bot.Sample": {
       "commandName": "Project",
       "launchUrl": "http://localhost:3978",
       "applicationUrl": "http://localhost:3978",
