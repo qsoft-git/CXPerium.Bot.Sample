@@ -33,7 +33,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<LoggingMiddleware>();
 
-app.UseDefaultFiles()
+app
+    .UseDefaultFiles()
     .UseStaticFiles()
     .UseWebSockets()
     .UseRouting()

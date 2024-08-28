@@ -39,7 +39,6 @@ namespace CXPerium.Bot.Sample.Channels
             base.OnWelcomeReceived(contact, activity);
         }
 
-
         /// <summary>
         /// It translates the data in the Contacts records of the user who sent the message. You can add different data by overriding this method. 
         /// For example, you can add information you get from the database to Attributes.
@@ -57,7 +56,6 @@ namespace CXPerium.Bot.Sample.Channels
             return base.GetContactByPhone(phone, profileName, attributes);
         }
 
-
         /// <summary>
         /// This method is triggered when the message written by the user is captured by DialogFlow.
         /// </summary>
@@ -69,7 +67,6 @@ namespace CXPerium.Bot.Sample.Channels
         {
             base.OnDialogFlowMessage(contact, activity, conversationState, fullFilment);
         }
-
 
         /// <summary>
         /// This method is triggered when the message written by the user is captured by DialogFlow.
