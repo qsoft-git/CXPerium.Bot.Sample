@@ -1,3 +1,4 @@
+using CXPerium.Logging;
 using CXPerium.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +30,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+
+app.UseMiddleware<LoggingMiddleware>();
 
 app.UseDefaultFiles()
     .UseStaticFiles()
