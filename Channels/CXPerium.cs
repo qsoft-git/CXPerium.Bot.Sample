@@ -1,6 +1,7 @@
 ﻿using CXPerium.Controller.WebHook;
 using CXPerium.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace CXPerium.Bot.Sample.Channels
 {
@@ -16,6 +17,15 @@ namespace CXPerium.Bot.Sample.Channels
         protected override void OnSurveyComplated(Contact contact, ConversationState conversation, SurveyCx survey)
         {
             base.OnSurveyComplated(contact, conversation, survey);
+        }
+        protected override void OnSessionTimeOut(Contact contact, ConversationState conversation)
+        {
+            base.OnSessionTimeOut(contact, conversation);
+        }
+
+        protected override void OnClosingLiveChat(Contact contact)
+        {
+            base.OnClosingLiveChat(contact);
         }
     }
 }

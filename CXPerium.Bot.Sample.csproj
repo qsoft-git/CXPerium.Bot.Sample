@@ -41,10 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CXPerium.Controller" Version="1.4.5" />
+    <PackageReference Include="CXPerium.Controller" Version="1.5.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
-    <PackageReference Include="Quartz" Version="3.7.0" />
-    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.7.0" />
+ 
   </ItemGroup>
 
   <Import Project="PostDeployScripts\IncludeSources.targets" Condition="Exists('PostDeployScripts\IncludeSources.targets')" />
