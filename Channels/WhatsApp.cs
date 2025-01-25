@@ -18,14 +18,10 @@ namespace CXPerium.Bot.Sample.Channels
         }
 
         [HttpPost]
-        public Task<ActionResult> Post([FromBody] WhatsappMessage message)
+        public ActionResult Post([FromBody] WhatsappMessage message)
         {
-            if (message.Messages != null)
-            {
-                _ = Task.Run(() => ProcessMessage(message)).ConfigureAwait(false);
-            }
-
-            return Task.FromResult<ActionResult>(Ok());
+            ProcessMessage(message);
+            return Ok();
         }
 
         /// <summary>
@@ -123,6 +119,17 @@ namespace CXPerium.Bot.Sample.Channels
         )
         {
             base.OnOrderReceived(contact, activity, conversationState);
+        }
+
+        /// <summary>
+        /// This method is triggered when the user shares their location with the business.
+        /// </summary>     
+        /// <param name="contact">Data of the user who sent the message in the Contacts list in CXPerium.</param>
+        /// <param name="activiy">Contains information about the shared location data.</param>
+        /// <param name="conversationState">Provides information about the conversation, such as language and session details.</param>
+        public override void OnLocationReceived(Contact contact, Activity activiy, ConversationState conversationState)
+        {
+            base.OnLocationReceived(contact, activiy, conversationState);
         }
     }
 }
